@@ -1,0 +1,15 @@
+{
+  "name": "key-shortcut",
+  "private": true,
+  "version": "0.0.1",
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "fmt": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  }
+}
