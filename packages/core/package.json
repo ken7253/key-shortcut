@@ -4,7 +4,11 @@
   "main": "index.js",
   "author": "ken7253 <ken7253@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "build": "tsc ./src/index.ts --outDir ./dist --declaration"
+    "build": "tsc ./src/index.ts --outDir ./dist --declaration",
+    "check": "run-p check:*",
+    "check:types": "tsc --noEmit",
+    "check:eslint": "eslint ."
   }
 }
