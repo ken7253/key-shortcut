@@ -9,6 +9,7 @@
     "fmt": "prettier --write ."
   },
   "devDependencies": {
+    "npm-run-all2": "^7.0.2",
     "prettier": "^3.4.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
