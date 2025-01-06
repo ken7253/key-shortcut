@@ -1,0 +1,10 @@
+{
+  "name": "core",
+  "version": "0.0.1",
+  "main": "index.js",
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc ./src/index.ts --outDir ./dist --declaration"
+  }
+}
