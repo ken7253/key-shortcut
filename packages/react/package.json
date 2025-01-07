@@ -4,6 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
+    "build": "tsc --build",
     "check": "run-p check:*",
     "check:eslint": "eslint .",
     "check:type": "tsc --noEmit"

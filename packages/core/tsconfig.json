@@ -1,8 +1,13 @@
 {
   "include": ["./src"],
+  "exclude": ["./src/**/*.test.ts"],
   "compilerOptions": {
+    "outDir": "./dist",
+    "lib": ["ESNext"],
     "target": "ESNext",
     "module": "ESNext",
+    "declaration": true,
+    "declarationMap": true,
     "moduleResolution": "bundler",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

@@ -5,8 +5,14 @@
   "author": "ken7253 <ken7253@gmail.com>",
   "license": "MIT",
   "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "tsc ./src/index.ts --outDir ./dist --declaration",
+    "build": "tsc --build",
     "test": "vitest .",
     "check": "run-p check:*",
     "check:types": "tsc --noEmit",
