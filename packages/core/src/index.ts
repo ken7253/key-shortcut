@@ -1,3 +1,5 @@
+import { keysToString } from "./utils/keys";
+
 type RegisterItem = {
   action: () => void;
 };
@@ -32,15 +34,11 @@ class InternalKeyShortcut {
 
   #register: Register = null;
 
-  static #joinKey(key: string[]) {
-    return key.sort().join("+");
-  }
-
   /**
    * Register shortcut key information.
    */
   add(key: string[], action: () => void) {
-    const registerKey = InternalKeyShortcut.#joinKey(key);
+    const registerKey = keysToString(key);
     const item: RegisterItem = {
       action,
     };
@@ -55,7 +53,7 @@ class InternalKeyShortcut {
    * Deletes a registered shortcut key.
    */
   remove(key: string[]) {
-    const registerKey = InternalKeyShortcut.#joinKey(key);
+    const registerKey = keysToString(key);
 
     if (this.#register == null) return;
 
@@ -68,7 +66,7 @@ class InternalKeyShortcut {
    * The process of retrieving information that has already been registered based on a key.
    */
   get(key: string[]): RegisterItem | undefined {
-    const registerKey = InternalKeyShortcut.#joinKey(key);
+    const registerKey = keysToString(key);
 
     return this.#register?.[registerKey];
   }
