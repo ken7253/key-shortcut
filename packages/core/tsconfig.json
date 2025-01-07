@@ -3,7 +3,7 @@
   "exclude": ["./src/**/*.test.ts"],
   "compilerOptions": {
     "outDir": "./dist",
-    "lib": ["ESNext"],
+    "lib": ["ESNext", "DOM"],
     "target": "ESNext",
     "module": "ESNext",
     "declaration": true,

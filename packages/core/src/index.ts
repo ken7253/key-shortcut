@@ -5,10 +5,35 @@ type RegisterItem = {
 type Register = Record<string, RegisterItem> | null;
 
 class InternalKeyShortcut {
+  constructor() {
+    const keydownHandler = (event: KeyboardEvent) => {
+      const { key, repeat } = event;
+      if (repeat) return;
+
+      this.#pressedKey = [...this.#pressedKey, key];
+      const registerItem = this.get(this.#pressedKey);
+
+      if (registerItem === undefined) return;
+
+      event.preventDefault();
+      registerItem.action();
+    };
+
+    const keyupHandler = (event: KeyboardEvent) => {
+      const { key } = event;
+      this.#pressedKey = this.#pressedKey.filter((v) => v !== key);
+    };
+
+    document.addEventListener("keydown", keydownHandler);
+    document.addEventListener("keyup", keyupHandler);
+  }
+
+  #pressedKey: string[] = [];
+
   #register: Register = null;
 
   static #joinKey(key: string[]) {
-    return key.join("+");
+    return key.sort().join("+");
   }
 
   /**
