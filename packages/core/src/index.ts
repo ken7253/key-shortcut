@@ -7,6 +7,9 @@ type Register = Record<string, RegisterItem> | null;
 export class KeyShortcut {
   #register: Register = null;
 
+  /**
+   * Register shortcut key information.
+   */
   add(key: string[], action: () => void) {
     const registerKey = key.join("+");
     const item: RegisterItem = {
@@ -19,6 +22,9 @@ export class KeyShortcut {
     };
   }
 
+  /**
+   * Deletes a registered shortcut key.
+   */
   remove(key: string[]) {
     const registerKey = key.join("+");
 
@@ -29,6 +35,9 @@ export class KeyShortcut {
     }
   }
 
+  /**
+   * The process of retrieving information that has already been registered based on a key.
+   */
   get(key: string[]): RegisterItem | undefined {
     const registerKey = key.join("+");
 
