@@ -28,4 +28,10 @@ export class KeyShortcut {
       delete this.#register[registerKey];
     }
   }
+
+  get(key: string[]): RegisterItem | undefined {
+    const registerKey = key.join("+");
+
+    return this.#register?.[registerKey];
+  }
 }
