@@ -1,5 +1,5 @@
 {
-  "name": "core",
+  "name": "@key-shortcut/core",
   "version": "0.0.1",
   "main": "index.js",
   "author": "ken7253 <ken7253@gmail.com>",

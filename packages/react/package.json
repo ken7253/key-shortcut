@@ -1,5 +1,5 @@
 {
-  "name": "react",
+  "name": "@key-shortcut/react",
   "version": "0.0.1",
   "description": "",
   "type": "module",
@@ -11,7 +11,8 @@
   "author": "ken7253 <ken7253@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "react": "^19.0.0"
+    "react": "^19.0.0",
+    "@key-shortcut/core": "workspace:*"
   },
   "devDependencies": {
     "eslint-plugin-react": "^7.37.3",
