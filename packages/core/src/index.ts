@@ -4,7 +4,7 @@ type RegisterItem = {
 
 type Register = Record<string, RegisterItem> | null;
 
-export class KeyShortcut {
+class InternalKeyShortcut {
   #register: Register = null;
 
   /**
@@ -44,3 +44,5 @@ export class KeyShortcut {
     return this.#register?.[registerKey];
   }
 }
+
+export const KeyShortcut = new InternalKeyShortcut();
