@@ -1,0 +1,20 @@
+{
+  "name": "react",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "check": "run-p check:*",
+    "check:eslint": "eslint .",
+    "check:type": "tsc --noEmit"
+  },
+  "author": "ken7253 <ken7253@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.37.3",
+    "eslint-plugin-react-hooks": "^5.1.0"
+  }
+}
