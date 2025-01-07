@@ -7,7 +7,7 @@ type Register = Record<string, RegisterItem> | null;
 class InternalKeyShortcut {
   #register: Register = null;
 
-  #joinKey(key: string[]) {
+  static #joinKey(key: string[]) {
     return key.join("+");
   }
 
@@ -15,7 +15,7 @@ class InternalKeyShortcut {
    * Register shortcut key information.
    */
   add(key: string[], action: () => void) {
-    const registerKey = this.#joinKey(key);
+    const registerKey = InternalKeyShortcut.#joinKey(key);
     const item: RegisterItem = {
       action,
     };
@@ -30,7 +30,7 @@ class InternalKeyShortcut {
    * Deletes a registered shortcut key.
    */
   remove(key: string[]) {
-    const registerKey = this.#joinKey(key);
+    const registerKey = InternalKeyShortcut.#joinKey(key);
 
     if (this.#register == null) return;
 
@@ -43,7 +43,7 @@ class InternalKeyShortcut {
    * The process of retrieving information that has already been registered based on a key.
    */
   get(key: string[]): RegisterItem | undefined {
-    const registerKey = this.#joinKey(key);
+    const registerKey = InternalKeyShortcut.#joinKey(key);
 
     return this.#register?.[registerKey];
   }
